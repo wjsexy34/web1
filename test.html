@@ -11,20 +11,42 @@
   <!-- <meta http-equiv="refresh" content="3"> -->
   <!--해당 페이지를 몇초 간격으로 리플레시(새로고침)함. -->
   <title>TEST</title>
+  <style>
+    #active {
+      color: red;
+    }
+    .saw {
+      color: gray;
+    }
+    a {
+      color: black;
+      text-decoration: none;
+    }
+    body {
+      background: #C3CAC4;
+    }
+    h1 {
+      font-size: 45px;
+      text-align: center;
+    }
+  </style>
 </head>
+<!-- ID선택자가 class 선택자보다 강함 -->
+<!-- TAG선택자와 class선택자중 class선택자가 더 강함 -->
 
 <body>
   <header>
     <h1>TEST</h1>
   </header>
+  <p><input type="text" placeholder="아무거나 입력하쇼" autofocus></p>
   <a href="https://opentutorials.org/module/1892/10954" target="_blank">의미론적 태그 사전</a>
   <a href="https://opentutorials.org/course/909/5142" target="_blank">정규 표현식 강의</a>
-  <a href="https://www.naver.com" target="_blank"><img src="images/rogo.jpg" width="50" title="우진로고" alt="우진로고"></a>
+  <a href="https://www.naver.com" target="_blank"><img src="images/rogo.png" width="50" title="네이버 로고" alt="네이버 로고"></a>
   <h2>list</h2>
   <ol>
-    <li>number1</li>
-    <li>number2</li>
-    <li>number3</li>
+    <li><a href="number1.html" class="saw">number1</a></li>
+    <li><a href="number2.html" class="saw" id="active">number2</a></li>
+    <li><a href="number3.html">number3</a></li>
   </ol>
   <p> <a target="_blank" href="https://www.naver.com">going_naver</a> </p>
   <h2>table</h2>
@@ -87,8 +109,8 @@
   </form>
   <h2>method</h2>
   <form action="www.localhost/method.php" method="post">
-  <p> ID : <input type="text" name="id"> </p>
-  <p> PW : <input type="password" name="pwd"> </p>
+    <p> ID : <input type="text" name="id"> </p>
+    <p> PW : <input type="password" name="pwd"> </p>
     <input type="submit">
   </form>
   <h2>file</h2>
@@ -98,34 +120,34 @@
   </form>
   <h2>HTML5의 새로운 제출양식_(input)</h2>
   <form action="form.php">
-  <p> number : <input type="number" name="age" min="10" max="15"> </p> <!-- 숫자만 입력가능, min=입력을 10밑으로는 못하고 max=15이상으로 못하게. 단 스크롤을 사용할 때 한해서임. -->
-  <p> date   : <input type="date" name="datev"> </p>
-  <p> month  : <input type="month" name="monthv"> </p>
-  <p> week   : <input type="week" name="weekv"> </p>
-  <p> time   : <input type="time" name="timev"> </p>
-  <p> email  : <input type="email" name="emailv"> </p>
-  <p> search : <input type="search" name="searchv"> </p>
-  <p> tel    : <input type="tel" name="telv"> </p>
-  <p> url    : <input type="url" name="urlv"> </p>
-  <p> range  : <input type="range" name="rangev" min="0" max="10"> </p>
-      <input type="submit">
-  </form>
-  <h1>form3: 새로운 속성들</h1>
-  <form action="login.php" autocomplete="off">
-  <!-- form태그 밑의 모든것들에 "자동완성" 기능이 "on"된다. 특정한것은 끄고싶다면 해당 영역에 autocomplete="off"하면 됨 -->
-  <p><input type="text" name="id" placeholder="id를 입력해주세요." autofocus> </p>
-  <!-- placeholder를 사용하면 메시지를 칸애 기본 입렵가능, autofocus를 사용하면 사용자가 페이지에 접속시 원하는 컨트롤에 커서를 맞춤. -->
-  <p><input type="password" name="password" placeholder="비밀번호를 입력해주세요."> </p>
-       <input type="submit">
+    <p> number : <input type="number" name="age" min="10" max="15"> </p> <!-- 숫자만 입력가능, min=입력을 10밑으로는 못하고 max=15이상으로 못하게. 단 스크롤을 사용할 때 한해서임. -->
+    <p> date : <input type="date" name="datev"> </p>
+    <p> month : <input type="month" name="monthv"> </p>
+    <p> week : <input type="week" name="weekv"> </p>
+    <p> time : <input type="time" name="timev"> </p>
+    <p> email : <input type="email" name="emailv"> </p>
+    <p> search : <input type="search" name="searchv"> </p>
+    <p> tel : <input type="tel" name="telv"> </p>
+    <p> url : <input type="url" name="urlv"> </p>
+    <p> range : <input type="range" name="rangev" min="0" max="10"> </p>
+    <input type="submit">
   </form>
   <h2>form3: 새로운 속성들</h2>
-<form action="register.php">
-  <input type="text" name="id" placeholder="아이디 입력" required pattern="[a-zA-Z].+[0-9] ">
-  <!-- 1.required: 몇개의 컨드롤 박스중 required(필수)하면 해당 박스(필수)만 입력해도 제출가능.-->
-  <!-- 2.pattern: 속성값으로 정규표현식이 들어가고, 어떠한 문자에서 어떠한 패턴을 찾아내 그 패턴이 그문자에 있는지 없는지 확인.-->
-  <input type="email" name="email" placeholder="이메일 입력"> <!-- 이 예제에서는 위와다르게 필수가 아닌 옵션이다.-->
-  <input type="submit">
-</form>
+  <form action="login.php" autocomplete="off">
+    <!-- form태그 밑의 모든것들에 "자동완성" 기능이 "on"된다. 특정한것은 끄고싶다면 해당 영역에 autocomplete="off"하면 됨 -->
+    <p><input type="text" name="id" placeholder="id를 입력해주세요."> </p>
+    <!-- placeholder를 사용하면 메시지를 칸애 기본 입렵가능, autofocus를 사용하면 사용자가 페이지에 접속시 원하는 컨트롤에 커서를 맞춤. -->
+    <p><input type="password" name="password" placeholder="비밀번호를 입력해주세요."> </p>
+    <input type="submit">
+  </form>
+  <h2>form3: 새로운 속성들</h2>
+  <form action="register.php">
+    <input type="text" name="id" placeholder="아이디 입력" required pattern="[a-zA-Z].+[0-9] ">
+    <!-- 1.required: 몇개의 컨드롤 박스중 required(필수)하면 해당 박스(필수)만 입력해도 제출가능.-->
+    <!-- 2.pattern: 속성값으로 정규표현식이 들어가고, 어떠한 문자에서 어떠한 패턴을 찾아내 그 패턴이 그문자에 있는지 없는지 확인.-->
+    <input type="email" name="email" placeholder="이메일 입력"> <!-- 이 예제에서는 위와다르게 필수가 아닌 옵션이다.-->
+    <input type="submit">
+  </form>
 </body>
 
 </html>
